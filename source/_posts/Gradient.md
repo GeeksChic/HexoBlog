@@ -1,0 +1,20 @@
+layout: policy
+title: Gradient
+date: 2016-12-08 12:25:53
+tags: Machine Learning
+categories: Algorithm
+---
+
+本文是David Silver强化学习公开课第六课的总结笔记。这一课主要讲了由于现实问题中状态数过多导致无法直接求解出值函数，从而通过梯度下降的方式来求解真实值函数的近似函数形式。Simple inline $a = b + c$.
+
+<!-- more -->
+
+前两节课我忽略了一些内容，这节课用到了，所以先回顾一下。首先是Planning的概念，在第一节课提到过强化学习是一种Sequential Decision Making问题，它是一种试错(trial-and-error)的学习方式，一开始不清楚environment的工作方式，不清楚执行什么样的行为是对的，什么样是错的，因而agent需要从不断尝试的经验中发现一个好的policy。而Planning也属于Sequential Decision Making问题，不同的是它的environment是已知的，例如游戏的规则是已知的，所以agent不需要通过与environment的交互来获取下一个状态，而是知道自己执行某个action之后状态是什么，再优化自己的policy。因此这两者之间是有联系的，假如强化学习学习出来environment的模型，知道了environment是如何work的，强化学习要解决的问题就是Planning了。
+
+前两节课我忽略了一些内容，这节课用到了，所以先回顾一下。首先是Planning的概念，在第一节课提到过强化学习是一种Sequential Decision Making问题，它是一种试错(trial-and-error)的学习方式，一开始不清楚environment的工作方式，不清楚执行什么样的行为是对的，什么样是错的，因而agent需要从不断尝试的经验中发现一个好的policy。而Planning也属于Sequential Decision Making问题，不同的是它的environment是已知的，例如游戏的规则是已知的，所以agent不需要通过与environment的交互来获取下一个状态，而是知道自己执行某个action之后状态是什么，再优化自己的policy。因此这两者之间是有联系的，假如强化学习学习出来environment的模型，知道了environment是如何work的，强化学习要解决的问题就是Planning了。
+
+
+前两节课我忽略了一些内容，这节课用到了，所以先回顾一下。首先是Planning的概念，在第一节课提到过强化学习是一种Sequential Decision Making问题，它是一种试错(trial-and-error)的学习方式，一开始不清楚environment的工作方式，不清楚执行什么样的行为是对的，什么样是错的，因而agent需要从不断尝试的经验中发现一个好的policy。而Planning也属于Sequential Decision Making问题，不同的是它的environment是已知的，例如游戏的规则是已知的，所以agent不需要通过与environment的交互来获取下一个状态，而是知道自己执行某个action之后状态是什么，再优化自己的policy。因此这两者之间是有联系的，假如强化学习学习出来environment的模型，知道了environment是如何work的，强化学习要解决的问题就是Planning了。
+
+
+前两节课我忽略了一些内容，这节课用到了，所以先回顾一下。首先是Planning的概念，在第一节课提到过强化学习是一种Sequential Decision Making问题，它是一种试错(trial-and-error)的学习方式，一开始不清楚environment的工作方式，不清楚执行什么样的行为是对的，什么样是错的，因而agent需要从不断尝试的经验中发现一个好的policy。而Planning也属于Sequential Decision Making问题，不同的是它的environment是已知的，例如游戏的规则是已知的，所以agent不需要通过与environment的交互来获取下一个状态，而是知道自己执行某个action之后状态是什么，再优化自己的policy。因此这两者之间是有联系的，假如强化学习学习出来environment的模型，知道了environment是如何work的，强化学习要解决的问题就是Planning了。
