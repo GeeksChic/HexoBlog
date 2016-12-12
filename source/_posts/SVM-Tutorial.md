@@ -1,20 +1,34 @@
 ---
-title: SVM Tutorial
+title: SVM：原理与应用
 date: 2016-12-10 19:54:55
-tags: Algorithm
-categories: Data Science
+tags: Algorithm，Machine Learning
+categories: Machine Learning
+comments: true
 ---
 
+# 前言
 
-SVMs (Support Vector Machines) are a useful technique for data classification. Although SVM is considered easier to use than Neural Networks, users not familiar with it often get unsatisfactory results at First. Here we outline a cookbook" approach which usually gives reasonable results.
+SVM是一种提出于上世纪60年代、并在其后被广泛研究而日渐完善的一种分类与回归分析模型，以其模型简单、分类能力强等优势而被广泛地应用于各类问题中。关于SVM的著述和文章可谓汗牛充栋，有专业研究者的论文，也有面向一般读者的科普性文章；前者注重算法研究，涉及大量公式推导与证明；后者注重原理介绍，尽量以浅显易懂的语言将基本原理介绍清楚；前者保证了数学的准确性，后者提供了数学意义的直观认识。作为一名非机器学习领域的科研者，我想尝试着将二者进行结合，因为我认为：任何高深复杂的东西都可以用尽可能准确又直观的讲解表达出来，如果做不到，那一定是讲者自身的理解不通透。本文将着重从SVM的原理入手，辅之以应用的介绍，以期能够帮助想要理解和运用SVM的人尽快入门。然而，需要指出的是：受限于个人水平的问题，文中的错误在所难免，甚至可能有很多。所以，还望大家海涵，同时提出您的批评和指正意见。本文在写作过程中参考了很多文章，有研究论文，也有博客文章等，在本文的末尾将会以链接形式给出。在此一并谢过！
+
+
 
 <!-- more -->
 
 
-Note that this guide is not for SVM researchers nor do we guarantee you will achieve the highest accuracy. Also, we do not intend to solve challenging or difficult problems. Our purpose is to give SVM novices a recipe for rapidly obtaining acceptable results. Although users do not need to understand the underlying theory behind SVM, we briey introduce the basics necessary for explaining our procedure. A classification task usually involves separating data into training and testing sets. Each instance in the training set contains one \target value" (i.e. the class labels) and several attributes" (i.e. the features or observed variables). The goal of SVM is to produce a model (based on the training data) which predicts the target values of the test data given only the test data attributes \eqref{label1}.
-$$f(x)=x+3$$
-另一个问题在于，当比较小的时候，这种方式是不可行的。
-$$a = x^2 - y^3 \tag{1}\label{label1}$$
-另一个问题在于，当比较小的时候，这种方式是不可行的。
-$$k(x_1,x_2)=(\langle x_1,x_2 \rangle+1)^2$$
+
+# 历史
+
+> “这要从1989年说起，我那时正在研究神经网络和核方法的性能对比，直到我的丈夫决定使用Vladimir的算法，SVM就诞生了。”  -by Isabelle Guyon
+
+1. 1963年，[Vladimir Vapnik](https://en.wikipedia.org/wiki/Vladimir_Vapnik)在解决模式识别问题时提出了支持向量方法；
+2. 1971年，Kimeldorf构造基于支持向量构建核空间的方法；
+3. Vapnik等人正式提出统计学习理论。
+
+早在20世纪60年代，Vapnik就已奠定了统计学习的基本理论基础，如经验风险最小化原则下统计学习一致性的条件（收敛性、收敛的可控性、收敛与概率测度定义的无关性，号称机器学习理论的“三个里程碑”）、关于统计学习方法推广性的界的理论，以及在此基础上建立的小样本归纳推理原则等。直到20世纪90年代中后期，能够实现统计学习理论和原则的实用性算法——SVM方法才逐渐被完整地提出，并且在模式识别等人工智能领域得到成功应用，受到广泛地关注。
+
+# 起式
+
+
+SVM，中文名为支持向量机或支持向量网络，简单来说，它的<font color="FF0000">基本形式</font>是一种二类<u>线性</u><font color="FF0000">监督式</font>**分类或回归**学习模型。通过在样本空间中寻找符合某种最优条件的超平面，将带有类别标签的训练数据进行分类，从而得到分类准则，运用于测试样本集，判断测试样本的所属类别。
+
 
