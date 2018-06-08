@@ -1,0 +1,17 @@
+1. 博客地址：https://geekschic.github.io/
+
+2. 博客搭建参考资料：
+
+	（1）手把手教从零开始在GitHub上使用Hexo搭建博客教程：https://www.jianshu.com/p/f4cc5866946b
+	（2）利用git解决hexo博客多PC间同步问题：http://chitanda.me/2015/06/18/hexo-sync-in-multiple-pc/
+
+
+2. 如何编辑并更新个人博客?
+（1）进入D:\blog\source\_posts中，找到需要编辑的博客文档，使用Markdown语言进行编辑；
+（2）编辑结束后，回退到D:\blog中，鼠标右键点开Git界面，输入以下命令行：
+	i. hexo clean
+	ii. hexo g
+	iii. hexo d
+
+3. 如何在两个终端同步博客内容？
+（1）
