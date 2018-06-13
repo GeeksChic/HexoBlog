@@ -22,7 +22,7 @@
 	iii）git push -u origin master    #推送更新到云端服务器
 
 （4）将git的内容同步到本地
-	i）
+	i）git pull
 
 3. 如何在两个终端同步博客内容？
 （1）
