@@ -4,14 +4,25 @@
 
 	（1）手把手教从零开始在GitHub上使用Hexo搭建博客教程：https://www.jianshu.com/p/f4cc5866946b
 	（2）利用git解决hexo博客多PC间同步问题：http://chitanda.me/2015/06/18/hexo-sync-in-multiple-pc/
+	（3）史上最详细的Hexo博客搭建图文教程：https://xuanwo.org/2015/03/26/hexo-intor/
 
 
-2. 如何编辑并更新个人博客?
+	
+	
+3. 如何编辑并更新个人博客?
 （1）进入D:\blog\source\_posts中，找到需要编辑的博客文档，使用Markdown语言进行编辑；
 （2）编辑结束后，回退到D:\blog中，鼠标右键点开Git界面，输入以下命令行：
 	i. hexo clean
 	ii. hexo g
 	iii. hexo d
+	
+（3）添加本地文件到仓库并同步到git上
+	i）git add .   #添加blog目录下所有文件，注意有个`.`（`.gitignore`声明过的文件不包含在内)
+	ii）git commit -m "first commit"  #添加更新说明
+	iii）git push -u origin master    #推送更新到云端服务器
+
+（4）将git的内容同步到本地
+	i）
 
 3. 如何在两个终端同步博客内容？
 （1）
